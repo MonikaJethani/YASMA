@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">YASMA</string>
+    <string name="title_posts">Posts</string>
+    <string name="title_albums">Albumns</string>
+    <string name="title_comments">Comments</string>
+    <string name="title_photos">Photos</string>
+</resources>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/postFragment">
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.monika.jethani.yasma.posts.view.PostFragment"
+        android:label="@string/title_posts"
+        tools:layout="@layout/fragment_post_list" >
+        <action
+            android:id="@+id/action_postFragment_to_commentFragment"
+            app:destination="@+id/commentFragment" >
+            <argument
+                android:name="PostId"
+                android:defaultValue='"1"' />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/albumFragment"
+        android:name="com.monika.jethani.yasma.albums.view.AlbumFragment"
+        android:label="@string/title_albums"
+        tools:layout="@layout/fragment_album_list" >
+        <action
+            android:id="@+id/action_albumFragment_to_photoFragment"
+            app:destination="@id/photoFragment" >
+            <argument android:defaultValue='"1"'
+                android:name="albumId" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/commentFragment"
+        android:name="CommentFragment"
+        android:label="@string/title_comments" >
+        <argument
+            android:name="PostId"
+            app:argType="string"
+            android:defaultValue='"1"' />
+    </fragment>
+
+    <fragment
+        android:id="@+id/photoFragment"
+        android:name="com.monika.jethani.yasma.photos.view.PhotoFragment"
+        android:label="@string/title_photos"
+        tools:layout="@layout/fragment_photo_list" >
+        <argument
+            android:name="albumId"
+            app:argType="string"
+            android:defaultValue='"1"' />
+    </fragment>
+
+</navigation>
